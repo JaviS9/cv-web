@@ -37,3 +37,238 @@ header a {
 header a:hover {
   text-decoration: underline;
 }
+
+#experience {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+#experience h3 {
+  font-size: 1.8rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+#experience article {
+  margin-bottom: 30px;
+}
+
+#experience h4 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+#experience p {
+  margin: 5px 0 10px;
+  font-style: italic;
+  color: #666;
+}
+
+#experience ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+
+.job {
+  margin-bottom: 30px;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.job-title h4 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.company {
+  margin: 0;
+  color: #555;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+.job-dates p {
+  margin: 0;
+  color: #666;
+  font-style: italic;
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+.job ul {
+  padding-left: 20px;
+  list-style-type: disc;
+  margin-top: 5px;
+}
+
+#education {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+#education h3 {
+  font-size: 1.8rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.education-entry {
+  margin-bottom: 25px;
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.degree-info h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.institution {
+  margin: 0;
+  font-style: italic;
+  color: #555;
+}
+
+.edu-dates p {
+  margin: 0;
+  color: #666;
+  font-style: italic;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.education-entry ul {
+  padding-left: 20px;
+  list-style-type: disc;
+  margin-top: 5px;
+}
+
+#skills {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+#skills h3 {
+  font-size: 1.8rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.skill-category {
+  margin-bottom: 20px;
+}
+
+.skill-category h4 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.skill-list p {
+  margin: 0;
+}
+
+.language-skill {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.language-skill p {
+  margin: 0;
+  width: 100px; /* Esto asegura que el nombre del idioma quede alineado */
+}
+
+.progress-bar-container {
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 80%; /* Hacemos que las barras sean más cortas */
+  margin-left: 5px; /* Añadimos un margen entre el nombre y la barra */
+  height: 20px; /* Aumentamos la altura de la barra */
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 10px;
+  position: relative;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+#personal-projects {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+#personal-projects h3 {
+  font-size: 1.8rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.project {
+  margin-bottom: 20px;
+}
+
+.project h4 {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.project p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.project a {
+  color: #007bff;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.project a:hover {
+  text-decoration: underline;
+}
