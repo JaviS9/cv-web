@@ -1,4 +1,4 @@
-/* Basic styles */
+/* Basic Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,31 +7,6 @@ body {
   color: #333;
 }
 
-/* Common styles for sections */
-.section {
-  padding: 5px;
-  max-width: 800px;
-  margin: auto;
-}
-
-.section h3 {
-  font-size: 1.8rem;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
-}
-
-h4 {
-  margin: 0;
-  font-size: 1.3rem;
-  color: #333;
-}
-
-p {
-  margin: 5px 0 10px;
-}
-
-/* Header */
 header {
   background-color: #f5f5f5;
   padding: 20px;
@@ -64,77 +39,47 @@ header a:hover {
   text-decoration: underline;
 }
 
-/* Experience section */
-#experience {
+/* Main container for experience, education, and skills */
+.main-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr; /* experiencia, educación, skills */
+  gap: 20px;
   padding: 20px;
-  max-width: 800px;
-  margin: auto;
+  box-sizing: border-box;
+  min-height: 200px;
 }
 
-#experience h3 {
+/* Section boxes */
+.section-box {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+h3 {
   font-size: 1.8rem;
   border-bottom: 2px solid #ccc;
   padding-bottom: 5px;
   margin-bottom: 20px;
 }
 
-.job {
+/* Specific Section Styling */
+#experience .job,
+#education .edu-entry,
+#skills .skill-category {
   margin-bottom: 30px;
 }
 
-.job-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
-}
-
-.job-title h4 {
-  margin: 0;
-  font-size: 1.3rem;
-  color: #333;
-}
-
-.company {
-  margin: 0;
-  color: #555;
-  font-style: italic;
-  font-size: 0.95rem;
-}
-
-.job-dates p {
-  margin: 0;
-  color: #666;
-  font-style: italic;
-  text-align: right;
-  font-size: 0.9rem;
-}
-
-.job ul {
-  padding-left: 20px;
-  list-style-type: disc;
-  margin-top: 5px;
-}
-
-/* Education section */
-#education {
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
-}
-
-#education h3 {
-  font-size: 1.8rem;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
-}
-
-.education-entry {
-  margin-bottom: 25px;
-}
-
+/* Flex for headers in job/education sections */
+.job-header,
 .edu-header {
   display: flex;
   justify-content: space-between;
@@ -143,18 +88,22 @@ header a:hover {
   margin-bottom: 10px;
 }
 
-.degree-info h4 {
+.job-title h4,
+.degree-info h4,
+.skill-category h4 {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #333;
 }
 
+.company,
 .institution {
   margin: 0;
-  font-style: italic;
   color: #555;
+  font-style: italic;
 }
 
+.job-dates p,
 .edu-dates p {
   margin: 0;
   color: #666;
@@ -163,6 +112,7 @@ header a:hover {
   text-align: right;
 }
 
+/* Education Entries */
 .education-entry ul {
   padding-left: 20px;
   list-style-type: disc;
@@ -170,39 +120,12 @@ header a:hover {
 }
 
 /* Skills section */
-#skills {
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
-}
-
-#skills h3 {
-  font-size: 1.8rem;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
-}
-
-.skill-category {
-  margin-bottom: 20px;
-}
-
-.skill-category h4 {
-  margin-bottom: 10px;
-  color: #333;
-  font-size: 1.2rem;
-}
-
 .skill-list {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   font-size: 1rem;
   color: #555;
-}
-
-.skill-list p {
-  margin: 0;
 }
 
 .language-skill {
@@ -242,112 +165,108 @@ header a:hover {
   font-weight: bold;
 }
 
-/* Personal Projects section */
-#personal-projects {
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
+/* Full-width section for personal projects */
+.section-full {
+  width: 100%;
+  padding: 40px 20px;
+  box-sizing: border-box;
 }
 
-#personal-projects h3 {
-  font-size: 1.8rem;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
-}
-
-/* Project container styles */
-.project {
-  margin-bottom: 20px;
-}
-
-.project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.project h4 {
-  font-size: 1.4rem;
-  color: #333;
-  margin: 0;
-}
-
-.github-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #333;
-  color: white;
-  text-decoration: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  transition: background-color 0.3s ease;
-}
-
-.github-link:hover {
-  background-color: #555;
-}
-
-.github-icon {
-  margin-right: 10px;
-  margin-bottom: 3px;
-  width: 16px;
-  height: 16px;
-}
-
-.github-link span {
-  margin-bottom: 6px;
-}
-
-.main-container {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1000px;
-  margin: 40px auto;
+/* Projects Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
-/* Columna izquierda (experiencia) */
-.left-column {
-  flex: 2;
-  min-width: 300px;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Columna derecha (educación + habilidades) */
-.right-column {
-  flex: 1;
-  min-width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-/* Secciones internas */
-.section-box {
-  background-color: #f9f9f9;
-  padding: 20px;
+.project-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
   border-radius: 8px;
-  border: 1px solid #ddd;
-  flex: 1;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Responsivo para pantallas pequeñas */
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.project-category {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #0077b5;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.project-card h4 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+
+.project-card a:hover {
+  background-color: #0077b5;
+}
+
+/* Responsive Behavior */
+@media (max-width: 1200px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .main-container {
+    display: flex;
     flex-direction: column;
+    gap: 20px;
   }
 
-  .left-column, .right-column {
+  #experience,
+  #education,
+  #skills {
     width: 100%;
   }
 
-  .right-column {
-    flex-direction: column;
+  .project-grid {
+    grid-template-columns: 1fr;
   }
 }
