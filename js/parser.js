@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 function parseAndInjectContent(content) {
     const sections = {};
-    const titles = {};
+    const sectionProps = {};  // Aquí guardamos propiedades (title, spoken_languages_title, etc.)
     const lines = content.split('\n');
     let currentSection = '';
 
@@ -16,22 +16,24 @@ function parseAndInjectContent(content) {
         if (line.startsWith('[') && line.endsWith(']')) {
             currentSection = line.slice(1, -1);
             sections[currentSection] = [];
-            titles[currentSection] = currentSection;
-            const nextLine = lines[i + 1]?.trim();
-            if (nextLine?.startsWith('title =')) {
-                titles[currentSection] = nextLine.split('=')[1].trim();
-                i++;
-            }
+            sectionProps[currentSection] = {};
         } else if (currentSection && line) {
-            sections[currentSection].push(line);
+            if (line.includes('=') && !line.startsWith('-')) {
+                const [key, value] = line.split('=').map(s => s.trim());
+                if (key && value !== undefined) {
+                    sectionProps[currentSection][key] = value;
+                }
+            } else {
+                sections[currentSection].push(line);
+            }
         }
     }
 
-    renderHeader(sections.header || []);
-    renderExperience(sections.experience || [], titles.experience);
-    renderEducation(sections.education || [], titles.education);
-    renderSkills(sections.skills || [], titles.skills);
-    renderProjects(sections["personal-projects"] || [], titles["personal-projects"]);
+    renderHeader(sections.header || [], sectionProps.header || {});
+    renderExperience(sections.experience || [], sectionProps.experience?.title || "Experiencia");
+    renderEducation(sections.education || [], sectionProps.education?.title || "Educación");
+    renderSkills(sections.skills || [], sectionProps.skills || {});
+    renderProjects(sections["personal-projects"] || [], sectionProps["personal-projects"]?.title || "Proyectos");
 }
 
 function renderExperience(lines, title) {
@@ -99,34 +101,43 @@ function renderEducation(lines, title) {
     container.innerHTML += html;
 }
 
-function renderSkills(lines, title) {
+function renderSkills(lines, props) {
     const container = document.getElementById("skills");
+    const title = props.title || "Skills";
     container.innerHTML = `<h3>${title}</h3>`;
     let html = "";
     let i = 0;
 
+    // Título dinámico para Spoken Languages:
+    const spokenLanguagesTitle = props.spoken_languages_title || "Spoken Languages";
+
     while (i < lines.length) {
         if (lines[i].endsWith(':')) {
             const category = lines[i].replace(':', '').trim();
-            html += `<div class="skill-category"><h4>${category}</h4>`;
-            i++;
-            if (category === "Spoken Languages") {
+
+            if (category.toLowerCase() === "spoken languages" || category.toLowerCase() === spokenLanguagesTitle.toLowerCase()) {
+                html += `<div class="skill-category"><h4>${spokenLanguagesTitle}</h4>`;
+                i++;
                 while (i < lines.length && lines[i] && !lines[i].endsWith(':')) {
                     const [lang, level, percent] = lines[i].split('|').map(x => x.trim());
                     html += `<div class="language-skill">
                                 <p>${lang}</p>
                                 <div class="progress-bar-container">
-                                    <div class="progress-bar" style="width: ${percent}%;">
-                                        <span class="progress-text">${level}</span>
-                                    </div>
+                                    <div class="progress-bar" style="width: ${percent}%;"><span class="progress-text">${level}</span></div>
                                 </div>
                             </div>`;
                     i++;
                 }
+                html += `</div>`;
             } else {
-                html += `<p class="skill-list">${lines[i++]}</p>`;
+                // Categoría normal
+                html += `<div class="skill-category"><h4>${category}</h4>`;
+                i++;
+                if (i < lines.length) {
+                    html += `<p class="skill-list">${lines[i++]}</p>`;
+                }
+                html += `</div>`;
             }
-            html += `</div>`;
         } else {
             i++;
         }
