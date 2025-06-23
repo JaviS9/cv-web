@@ -1,0 +1,36 @@
+[header]
+name = Juan Pérez
+title = Full Stack Developer
+email = juan.perez@example.com
+phone = +34 123 456 789
+linkedin = https://www.linkedin.com/in/juanperez
+github = https://github.com/juanperez
+
+[experience]
+title = Experiencia Profesional
+Frontend Developer | Google | 2020 - 2023
+- Desarrollé interfaces en React con enfoque en accesibilidad.
+- Optimicé la carga de la web en un 40%.
+Backend Developer | Amazon | 2018 - 2020
+- Implementé APIs RESTful en Node.js.
+- Mejoré la seguridad en autenticación.
+
+[education]
+title = Formación Académica
+Grado en Ingeniería Informática | Universidad Complutense | 2014 - 2018
+- Mención en Ingeniería del Software.
+
+[skills]
+title = Habilidades
+Tecnologías:
+JavaScript, TypeScript, React, Node.js, Express, MongoDB
+
+Spoken Languages:
+Español | Nativo | 100
+Inglés | Avanzado | 85
+Francés | Intermedio | 60
+
+[personal-projects]
+title = Proyectos Personales
+Web App | assets/img/clima-app.png | App del clima hecha con React y OpenWeather API | https://github.com/juanperez/clima-app
+CLI Tool | assets/img/cli-tool.png | Herramienta de línea de comandos para backups | https://github.com/juanperez/backup-cli
